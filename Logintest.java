@@ -6,7 +6,10 @@ public class Logintest{
 
 	JPanel home,about,login,footer;
 	
+	
+	
 	public static void main(String[] args) {
+		
 		
 		new Logintest();
 
@@ -14,7 +17,21 @@ public class Logintest{
 
 	Logintest()
 	{
+		
+		//To get screen size start
+				Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+				screenSize.getHeight();
+				screenSize.getWidth();
+				int screenHeight = screenSize.height;
+				int screenWidth = screenSize.width;
+		//To get screen size end
+				
 		JFrame f=new JFrame("College Management System");
+		JLabel lblHeading=new JLabel("College Management System");
+		lblHeading.setFont(new Font("ARIAL", Font.BOLD,30));
+		lblHeading.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeading.setBounds(0, 0, screenWidth, 50);
+		f.add(lblHeading);
 		JButton b1=new JButton("About Us");
 		b1.setBounds(50, 50, 100, 20);
 		
@@ -24,7 +41,11 @@ public class Logintest{
 		//Home panel design Start
 		home=new JPanel();
 		home.setBounds(50, 80, 400, 250);
-		home.setBackground(Color.BLUE);
+		//home.setBackground(Color.BLUE);
+		JLabel lblhome=new JLabel("Home content here");
+		lblhome.setBounds(50, -50, 400, 250);
+		home.add(lblhome);
+		home.setLayout(null);
 		//Home panel design end
 		
 		//About panel design start
@@ -32,7 +53,7 @@ public class Logintest{
 		about.setBounds(50, 80, 400, 250);
 		about.setVisible(false);
 		JLabel lblabout=new JLabel("About us will be here");
-		lblabout.setBounds(50, 80, 400, 250);
+		lblabout.setBounds(50, -50, 400, 250);
 		about.add(lblabout);
 		about.setLayout(null);
 		//About panel design end
@@ -61,10 +82,12 @@ public class Logintest{
 		footer=new JPanel();
 		footer.setBounds(50, 300, 400, 100);
 		JLabel lblFooter=new JLabel("Footer will be here");
-		lblFooter.setBounds(50, 325, 400, 100);
+		lblFooter.setBounds(50, 0, 400, 100);
 		footer.add(lblFooter);
 		footer.setLayout(null);
 		//Footer panel design end
+		
+		
 		
 		f.add(b1);
 		f.add(b2);
@@ -72,7 +95,7 @@ public class Logintest{
 		f.add(about);
 		f.add(login);
 		f.add(footer);
-		f.setBounds(0, 0, 500, 500);
+		f.setBounds(0, 0, screenWidth, screenHeight);
 		f.setLayout(null);
 		f.setVisible(true);
 		
