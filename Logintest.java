@@ -89,18 +89,32 @@ public class Logintest{
 		login.setBounds(50, 130, screenWidth-120, screenHeight-300);
 		login.setVisible(false);
 		login.setBackground(Color.DARK_GRAY);
+		JPanel nlogin=new JPanel();
+		JButton btnlogin=new JButton("Login");
+		btnlogin.setBounds(400, 230, 80, 30);
+		int nloginsx=(50+screenWidth-120)/2-(50+screenWidth-120)/4; //Start X
+		int nloginsy=(130+screenHeight-300)/2-(130+screenHeight-300)/4; //Start Y
+		int nloginex=(50+screenWidth-180)/2; //End X
+		int nloginey=(130+screenHeight-300)/2; //End Y
+		nlogin.setBounds(nloginsx, nloginsy, nloginex, nloginey);
+		nlogin.setBackground(Color.LIGHT_GRAY);
 		JLabel userName=new JLabel("Username");
-		userName.setBounds(50, 100, 50, 20);
+		userName.setBounds(190, 110, 190, 20);
+		userName.setFont(new Font("ARIAL", Font.BOLD,20));
 		JLabel password=new JLabel("Password");
-		password.setBounds(50, 140, 50, 20);
+		password.setBounds(190, 180, 190, 20);
+		password.setFont(new Font("ARIAL", Font.BOLD,20));
 		JTextField tbUserName=new JTextField();
-		tbUserName.setBounds(100, 100, 50, 20);
+		tbUserName.setBounds(300, 100, 340, 35);
 		JPasswordField tbpassword=new JPasswordField();
-		tbpassword.setBounds(100, 140, 50, 20);
-		login.add(userName);
-		login.add(tbUserName);
-		login.add(password);
-		login.add(tbpassword);
+		tbpassword.setBounds(300, 170, 340, 35);
+		nlogin.add(userName);
+		nlogin.add(tbUserName);
+		nlogin.add(password);
+		nlogin.add(tbpassword);
+		nlogin.add(btnlogin);
+		nlogin.setLayout(null);
+		login.add(nlogin);
 		login.setLayout(null);
 		//Login panel design end
 		
@@ -194,6 +208,20 @@ public class Logintest{
 			}
 		});
 			
+		
+			//Login Button action start
+		
+				btnlogin.addActionListener(new ActionListener()
+						{
+					public void actionPerformed(ActionEvent e)
+					{
+						String username=tbUserName.getText();
+						String password=tbpassword.getText();
+						
+					}
+						});
+		
+			//Login Button action end
 		
 		//Button action ends here
 		
